@@ -9,6 +9,8 @@ class arrayClass {
     this.length++;
     return this.data;
   }
+
+  pop() {}
 }
 
 module.exports = arrayClass;
