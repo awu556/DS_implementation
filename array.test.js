@@ -1,5 +1,13 @@
 const arrayClass = require("./array");
 
+const pushTest = arr => {
+  let newArr = new arrayClass();
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i]);
+  }
+  return newArr;
+};
+
 describe("array class", () => {
   const newArray = new arrayClass();
 
@@ -13,43 +21,36 @@ describe("array class", () => {
     });
 
     test("the data object populates with a key-value pair", () => {
-      let testing = new arrayClass();
-      testing.push("Hello");
-      testing.push("World");
-      testing.push("!");
+      const test1 = pushTest(["Hello", "World", "!"]);
 
-      expect(testing.data["0"]).toBe("Hello");
-      expect(testing.data["1"]).toBe("World");
-      expect(testing.data["2"]).toBe("!");
+      expect(test1.data["0"]).toBe("Hello");
+      expect(test1.data["1"]).toBe("World");
+      expect(test1.data["2"]).toBe("!");
     });
 
     test("the length of the array increases with each new element", () => {
-      let testing2 = new arrayClass();
-      testing2.push("One!");
-      testing2.push("Two!");
-      testing2.push("Three!");
-      testing2.push("Four!");
-      testing2.push("Five!");
+      const test2 = pushTest(["One!", "Two!", "Three!", "Four!", "Five!"]);
 
-      expect(testing2.length).toBe(5);
+      expect(test2.length).toBe(5);
     });
   });
 
   describe("pop method", () => {
-    test("should possess a push method", () => {
+    test("should possess a pop method", () => {
       expect(newArray.pop).not.toBeUndefined();
     });
 
     test("the last element of the array should be undefined after popping", () => {
-      let testing3 = new arrayClass();
-      testing3.push("Bob");
-      testing3.push("Loblaw");
-      testing3.push("Attorney");
-      testing3.push("at");
-      testing3.push("Law");
-      testing3.pop();
+      let test3 = pushTest(["Bob", "Loblaw", "Attorney", "at", "Law"]);
+      test3.pop();
 
-      expect(testing3.data["5"]).toBeUndefined();
+      expect(test3.data["5"]).toBeUndefined();
+    });
+
+    test("should return the last element when called", () => {
+      let test4 = pushTest(["Life", "finds", "a", "way"]);
+
+      expect(test4.pop()).toBe("way");
     });
   });
 });

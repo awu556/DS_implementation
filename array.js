@@ -10,7 +10,12 @@ class arrayClass {
     return this.data;
   }
 
-  pop() {}
+  pop() {
+    let item = this.data[this.length - 1];
+    delete this.data[this.length - 1];
+    this.length--;
+    return item;
+  }
 }
 
 module.exports = arrayClass;
