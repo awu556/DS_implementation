@@ -4,8 +4,10 @@ class arrayClass {
     this.data = {};
   }
 
-  push(val) {
-    return ValidityState;
+  push(element) {
+    this.data[this.length] = element;
+    this.length++;
+    return this.data;
   }
 }
 

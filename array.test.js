@@ -13,9 +13,14 @@ describe("array class", () => {
     });
 
     test("the data array populates with a key-value pair", () => {
-      let data = new arrayClass();
-      data.push(5);
-      data.push(6);
+      let testing = new arrayClass();
+      testing.push("Hello");
+      testing.push("World");
+      testing.push("!");
+
+      expect(testing.data["0"]).toBe("Hello");
+      expect(testing.data["1"]).toBe("World");
+      expect(testing.data["2"]).toBe("!");
     });
   });
 });
