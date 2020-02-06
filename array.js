@@ -16,6 +16,15 @@ class arrayClass {
     this.length--;
     return item;
   }
+
+  insertAt(item, index) {
+    for (let i = this.length; i > index; i--) {
+      this.data[i] = this.data[i - 1];
+    }
+    this.data[index] = item;
+    this.length++;
+    return this.data;
+  }
 }
 
 module.exports = arrayClass;

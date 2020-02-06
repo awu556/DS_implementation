@@ -47,10 +47,34 @@ describe("array class", () => {
       expect(test3.data["5"]).toBeUndefined();
     });
 
+    test("the length of the array should decrease after popping", () => {
+      let test4 = pushTest(["Apple", "Orange", "Banana"]);
+      expect(test4.length).toBe(3);
+      test4.pop();
+      expect(test4.length).toBe(2);
+    });
+
     test("should return the last element when called", () => {
       let test4 = pushTest(["Life", "finds", "a", "way"]);
 
       expect(test4.pop()).toBe("way");
+    });
+  });
+
+  describe("insertAt method", () => {
+    let test5;
+
+    beforeEach(() => {
+      test5 = pushTest(["Somebody", "told", "me"]);
+    });
+
+    test("should possess a insertAt method", () => {
+      expect(newArray.insertAt).not.toBeUndefined();
+    });
+
+    test("should insert elements at the given index", () => {
+      test5.insertAt("once", 1);
+      expect(test5.data["1"]).toBe("once");
     });
   });
 });
