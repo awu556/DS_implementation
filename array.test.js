@@ -99,5 +99,30 @@ describe("array class", () => {
       test6.deleteAt(0);
       expect(test6.data["0"]).toBe("you're");
     });
+
+    test("should decrease the length of the array after deleting", () => {
+      test6.deleteAt(0);
+      expect(test6.length).toBe(3);
+      test6.deleteAt(0);
+      expect(test6.length).toBe(2);
+    });
+  });
+
+  describe("getElementAtIndex method", () => {
+    let test7;
+
+    beforeEach(() => {
+      test7 = pushTest(["dog", "cat", "llama", "ostrich"]);
+    });
+
+    test("should have a getElementAtIndex method", () => {
+      expect(newArray.getElementAtIndex).not.toBeUndefined();
+    });
+
+    test("should return the element at the given index", () => {
+      expect(test7.getElementAtIndex(2)).toBe("llama");
+      expect(test7.getElementAtIndex(0)).toBe("dog");
+      expect(test7.getElementAtIndex(3)).toBe("ostrich");
+    });
   });
 });

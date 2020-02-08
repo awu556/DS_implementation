@@ -34,6 +34,10 @@ class arrayClass {
     this.length--;
     return this.data;
   }
+
+  getElementAtIndex(index) {
+    return this.data[index];
+  }
 }
 
 module.exports = arrayClass;
