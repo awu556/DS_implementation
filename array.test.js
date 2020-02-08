@@ -76,5 +76,28 @@ describe("array class", () => {
       test5.insertAt("once", 1);
       expect(test5.data["1"]).toBe("once");
     });
+
+    test("should extend the length of the array after inserting", () => {
+      test5.insertAt("you", 3);
+      test5.insertAt("had", 4);
+      expect(test5.length).toBe(5);
+    });
+  });
+
+  describe("deleteAt method", () => {
+    let test6;
+
+    beforeEach(() => {
+      test6 = pushTest(["Now", "you're", "just", "somebody"]);
+    });
+
+    test("should have a deleteAt method", () => {
+      expect(newArray.deleteAt).not.toBeUndefined();
+    });
+
+    test("should delete the element at the given index", () => {
+      test6.deleteAt(0);
+      expect(test6.data["0"]).toBe("you're");
+    });
   });
 });
