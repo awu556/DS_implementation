@@ -62,4 +62,43 @@ describe("stack class", () => {
       expect(testStack.pop()).toBe("Underflow");
     });
   });
+
+  describe("peek method", () => {
+    test("should possess a peek method", () => {
+      expect(testStack.peek).not.toBeUndefined();
+    });
+
+    test("the peek method returns the topmost element without deleting it", () => {
+      expect(testStack.peek()).toBe(19);
+      expect(testStack.items.length).toBe(4);
+    });
+  });
+
+  // Helper Method Tests
+
+  describe("isEmpty method", () => {
+    test("should possess a isEmpty method", () => {
+      expect(testStack.isEmpty).not.toBeUndefined();
+    });
+
+    test("the isEmpty method returns true if the stack has elements and false if it doesn't", () => {
+      expect(testStack.isEmpty()).toBeTruthy();
+      let popCount = 0;
+      while (popCount !== 4) {
+        testStack.pop();
+        popCount += 1;
+      }
+      expect(testStack.isEmpty()).toBeFalsy();
+    });
+  });
+
+  describe("printStack method", () => {
+    test("should possess a printStack method", () => {
+      expect(testStack.printStack).not.toBeUndefined();
+    });
+
+    test("the printStack method returns a string of all items concatenated", () => {
+      expect(testStack.printStack()).toBe("Zebra Gorilla 12 19");
+    });
+  });
 });
