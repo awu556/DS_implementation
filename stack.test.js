@@ -36,4 +36,30 @@ describe("stack class", () => {
       expect(testStack.items.length).toBe(5);
     });
   });
+
+  describe("pop method", () => {
+    test("should possess a pop method", () => {
+      expect(testStack.pop).not.toBeUndefined();
+    });
+
+    test("the pop method removes the last element and returns it", () => {
+      expect(testStack.pop()).toBe(19);
+      expect(testStack.pop()).toBe(12);
+    });
+
+    test("the size of the stack decreases after each pop", () => {
+      expect(testStack.items.length).toBe(4);
+      testStack.pop();
+      expect(testStack.items.length).toBe(3);
+    });
+
+    test("the pop method accounts for underflow, or no items left in the stack", () => {
+      let popCount = 0;
+      while (popCount !== 4) {
+        testStack.pop();
+        popCount += 1;
+      }
+      expect(testStack.pop()).toBe("Underflow");
+    });
+  });
 });
