@@ -36,5 +36,24 @@ describe("Linked List class", () => {
       expect(testLinked.head.val).toBe(5);
       expect(testLinked.head.next.val).toBe(10);
     });
+
+    test("each element added increases the size of the linked list", () => {
+      testLinked.add(14);
+      testLinked.add(2);
+      testLinked.add(7);
+      expect(testLinked.size).toBe(5);
+    });
+  });
+
+  describe("insertAt method", () => {
+    test("should have an insertAt method", () => {
+      expect(testLinked.insertAt).not.toBeUndefined();
+    });
+
+    test("if there are no nodes in the list, insertAts a node that becomes the head", () => {
+      testLinked.insertAt(5);
+      expect(testLinked.head).not.toBeUndefined();
+      expect(testLinked.head.val).toBe(5);
+    });
   });
 });
