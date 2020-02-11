@@ -46,14 +46,31 @@ describe("Linked List class", () => {
   });
 
   describe("insertAt method", () => {
+    beforeEach(() => {
+      testLinked = new LinkedListClass();
+    });
     test("should have an insertAt method", () => {
       expect(testLinked.insertAt).not.toBeUndefined();
     });
 
-    test("if there are no nodes in the list, insertAts a node that becomes the head", () => {
-      testLinked.insertAt(5);
-      expect(testLinked.head).not.toBeUndefined();
-      expect(testLinked.head.val).toBe(5);
+    test("inserts a new node at the index provided", () => {
+      testLinked.add(10);
+      testLinked.insertAt("Hello World!", 1);
+      expect(testLinked.head.next.val).toBe("Hello World!");
+    });
+
+    test("increases the size of the linked list", () => {
+      testLinked = addNodes(["Car", "Van", "Bus"]);
+      testLinked.insertAt("Boat", 1);
+      testLinked.insertAt("Yatcht", 3);
+      expect(testLinked.size).toBe(5);
+    });
+
+    test("if inserting at the head, replaced the current head with a new head", () => {
+      testLinked = addNodes([12, 20, 15, 9, 11]);
+      expect(testLinked.head.val).toBe(12);
+      testLinked.insertAt(40, 0);
+      expect(testLinked.head.val).toBe(40);
     });
   });
 });

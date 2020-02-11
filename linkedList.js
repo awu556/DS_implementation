@@ -37,7 +37,7 @@ class LinkedListClass {
       curr = this.head;
 
       if (index === 0) {
-        node.next = head;
+        node.next = this.head;
         this.head = node;
       } else {
         curr = this.head;
