@@ -32,4 +32,4 @@ class StackClass {
   }
 }
 
-module.exports = stackClass;
+module.exports = StackClass;
