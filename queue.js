@@ -1,4 +1,4 @@
-class queueClass {
+class QueueClass {
   constructor() {
     this.items = [];
   }
@@ -31,4 +31,4 @@ class queueClass {
   }
 }
 
-module.exports = queueClass;
+module.exports = QueueClass;

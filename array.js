@@ -1,4 +1,4 @@
-class arrayClass {
+class ArrayClass {
   constructor() {
     this.length = 0;
     this.data = {};
@@ -40,4 +40,4 @@ class arrayClass {
   }
 }
 
-module.exports = arrayClass;
+module.exports = ArrayClass;

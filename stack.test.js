@@ -1,7 +1,7 @@
-const stackClass = require("./stack");
+const StackClass = require("./stack");
 
 const stackPush = arr => {
-  let newStack = new stackClass();
+  let newStack = new StackClass();
   for (let i = 0; i < arr.length; i++) {
     newStack.push(arr[i]);
   }
@@ -9,7 +9,7 @@ const stackPush = arr => {
 };
 
 describe("stack class", () => {
-  let testStack = new stackClass();
+  let testStack = new StackClass();
 
   test("should be a class object", () => {
     expect(typeof testStack).toEqual("object");

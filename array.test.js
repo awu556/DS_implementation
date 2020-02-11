@@ -1,7 +1,7 @@
-const arrayClass = require("./array");
+const ArrayClass = require("./array");
 
 const pushTest = arr => {
-  let newArr = new arrayClass();
+  let newArr = new ArrayClass();
   for (let i = 0; i < arr.length; i++) {
     newArr.push(arr[i]);
   }
@@ -9,7 +9,7 @@ const pushTest = arr => {
 };
 
 describe("array class", () => {
-  const newArray = new arrayClass();
+  const newArray = new ArrayClass();
 
   test("should be a class object", () => {
     expect(typeof newArray).toEqual("object");

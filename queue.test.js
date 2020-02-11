@@ -1,7 +1,7 @@
-const queueClass = require("./queue");
+const QueueClass = require("./queue");
 
 const loadQueue = arr => {
-  let newQueue = new queueClass();
+  let newQueue = new QueueClass();
   for (let i = 0; i < arr.length; i++) {
     newQueue.enqueue(arr[i]);
   }
@@ -9,7 +9,7 @@ const loadQueue = arr => {
 };
 
 describe("Queue class", () => {
-  let testQueue = new queueClass();
+  let testQueue = new QueueClass();
 
   test("should be a class object", () => {
     expect(typeof testQueue).toEqual("object");
