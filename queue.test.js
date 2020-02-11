@@ -58,4 +58,47 @@ describe("Queue class", () => {
       expect(testQueue.dequeue()).toBe("Underflow");
     });
   });
+
+  describe("front method", () => {
+    test("should have an front method", () => {
+      expect(testQueue.front).not.toBeUndefined();
+    });
+
+    test("should return the first element of the queue", () => {
+      expect(testQueue.front()).toBe("Orange");
+    });
+
+    test("should notify if the queue is empty", () => {
+      for (let i = 0; testQueue.items.length; i++) {
+        testQueue.dequeue();
+      }
+      expect(testQueue.front()).toBe("Queue is empty");
+    });
+  });
+
+  // Helper Methods
+
+  describe("isEmpty method", () => {
+    test("should have an isEmpty method", () => {
+      expect(testQueue.isEmpty).not.toBeUndefined();
+    });
+
+    test("returns true if the array is empty, and false if it is not", () => {
+      expect(testQueue.isEmpty()).toBe(false);
+      for (let i = 0; testQueue.items.length; i++) {
+        testQueue.dequeue();
+      }
+      expect(testQueue.isEmpty()).toBe(true);
+    });
+  });
+
+  describe("printQueue method", () => {
+    test("should have an printQueue method", () => {
+      expect(testQueue.printQueue).not.toBeUndefined();
+    });
+
+    test("should print out all the elements in the items array", () => {
+      expect(testQueue.printQueue()).toEqual("Orange Apple Banana Pear");
+    });
+  });
 });
