@@ -20,8 +20,9 @@ class LinkedListClass {
     } else {
       current = this.head;
       while (current.next) {
-        current.next = node;
+        current = current.next;
       }
+      current.next = node;
     }
     this.size++;
   }
