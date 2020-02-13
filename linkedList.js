@@ -42,7 +42,6 @@ class LinkedListClass {
       } else {
         curr = this.head;
         let it = 0;
-
         while (it < index) {
           it++;
           prev = curr;
@@ -52,6 +51,31 @@ class LinkedListClass {
         prev.next = node;
       }
       this.size++;
+    }
+  }
+
+  removeFrom(index) {
+    if (index > 0 && index > this.size) {
+      return -1;
+    } else {
+      let curr,
+        prev,
+        it = 0;
+      curr = this.head;
+      prev = curr;
+
+      if (index === 0) {
+        this.head = curr.next;
+      } else {
+        while (it < index) {
+          it++;
+          prev = curr;
+          curr = curr.next;
+        }
+        prev.next = curr.next;
+      }
+      this.size--;
+      return curr.element;
     }
   }
 }

@@ -26,10 +26,6 @@ describe("Linked List class", () => {
       expect(testLinked.head.val).toBe(5);
     });
 
-    // beforeEach(() => {
-    //   testLinked = addNodes([12, 20, 50, "Pear"]);
-    // });
-
     test("if adding multiple elements, populates other elements as next", () => {
       testLinked.add(10);
       expect(testLinked.head).not.toBeUndefined();
@@ -49,6 +45,7 @@ describe("Linked List class", () => {
     beforeEach(() => {
       testLinked = new LinkedListClass();
     });
+
     test("should have an insertAt method", () => {
       expect(testLinked.insertAt).not.toBeUndefined();
     });
@@ -71,6 +68,34 @@ describe("Linked List class", () => {
       expect(testLinked.head.val).toBe(12);
       testLinked.insertAt(40, 0);
       expect(testLinked.head.val).toBe(40);
+    });
+  });
+
+  describe("removeFrom method", () => {
+    // beforeEach(() => {
+    //   testLinked = new LinkedListClass();
+    // });
+
+    test("should have an removeFrom method", () => {
+      expect(testLinked.removeFrom).not.toBeUndefined();
+    });
+
+    test("should remove the element from the index", () => {
+      testLinked.removeFrom(1);
+      expect(testLinked.head.next.val).toBe(20);
+    });
+
+    test("should decrease the size of the linked list", () => {
+      expect(testLinked.size).toBe(5);
+      testLinked.removeFrom(2);
+      testLinked.removeFrom(3);
+      expect(testLinked.size).toBe(3);
+    });
+
+    test("should reassign the head if the index to remove is 0", () => {
+      expect(testLinked.head.val).toBe(40);
+      testLinked.removeFrom(0);
+      expect(testLinked.head.val).toBe(20);
     });
   });
 });
