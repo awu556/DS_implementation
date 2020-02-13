@@ -78,6 +78,25 @@ class LinkedListClass {
       return curr.element;
     }
   }
+
+  removeElement(val) {
+    let current = this.head;
+    let prev = null;
+    while (current !== null) {
+      if (current.val === val) {
+        if (prev === null) {
+          this.head = current.next;
+        } else {
+          prev.next = current.next;
+        }
+        this.size--;
+        return current.val;
+      }
+      prev = current;
+      current = current.next;
+    }
+    return -1;
+  }
 }
 
 module.exports = { Node, LinkedListClass };

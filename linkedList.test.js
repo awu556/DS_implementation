@@ -72,10 +72,6 @@ describe("Linked List class", () => {
   });
 
   describe("removeFrom method", () => {
-    // beforeEach(() => {
-    //   testLinked = new LinkedListClass();
-    // });
-
     test("should have an removeFrom method", () => {
       expect(testLinked.removeFrom).not.toBeUndefined();
     });
@@ -96,6 +92,18 @@ describe("Linked List class", () => {
       expect(testLinked.head.val).toBe(40);
       testLinked.removeFrom(0);
       expect(testLinked.head.val).toBe(20);
+    });
+  });
+
+  describe("removeElement method", () => {
+    test("should have an removeElement method", () => {
+      expect(testLinked.removeElement).not.toBeUndefined();
+    });
+
+    test("should search through the linked list to remove the element", () => {
+      testLinked = addNodes([22, 44, 66, 11]);
+      testLinked.removeElement(11);
+      expect(testLinked.head.next.next.next).toBeNull();
     });
   });
 });
