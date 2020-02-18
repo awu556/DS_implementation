@@ -105,5 +105,23 @@ describe("Linked List class", () => {
       testLinked.removeElement(11);
       expect(testLinked.head.next.next.next).toBeNull();
     });
+
+    test("should decrease the size of the linked list", () => {
+      expect(testLinked.size).toBe(3);
+    });
+  });
+
+  // Helper Method Tests
+
+  describe("indexOf method", () => {
+    test("should have an indexOf method", () => {
+      expect(testLinked.indexOf).not.toBeUndefined();
+    });
+
+    test("should search through the linked list to remove the element", () => {
+      testLinked = addNodes([22, 44, 66, 11]);
+      testLinked.removeElement(11);
+      expect(testLinked.head.next.next.next).toBeNull();
+    });
   });
 });

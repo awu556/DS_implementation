@@ -97,6 +97,21 @@ class LinkedListClass {
     }
     return -1;
   }
+
+  // Helper Methods
+  indexOf(element) {
+    let count = 0;
+    let current = this.head;
+
+    while (current !== null) {
+      if (current.element === element) {
+        return count;
+      }
+      count++;
+      current = current.next;
+    }
+    return -1;
+  }
 }
 
 module.exports = { Node, LinkedListClass };
