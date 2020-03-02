@@ -104,7 +104,7 @@ class LinkedListClass {
     let current = this.head;
 
     while (current !== null) {
-      if (current.element === element) {
+      if (current.val === element) {
         return count;
       }
       count++;

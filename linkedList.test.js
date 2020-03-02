@@ -118,10 +118,13 @@ describe("Linked List class", () => {
       expect(testLinked.indexOf).not.toBeUndefined();
     });
 
-    test("should search through the linked list to remove the element", () => {
+    test("should return the index of the given element at the index", () => {
       testLinked = addNodes([22, 44, 66, 11]);
-      testLinked.removeElement(11);
-      expect(testLinked.head.next.next.next).toBeNull();
+      expect(testLinked.indexOf(66)).toBe(2);
+    });
+
+    test("should return -1 if the value isn't present in the linked list", () => {
+      expect(testLinked.indexOf(109)).toBe(-1);
     });
   });
 });
