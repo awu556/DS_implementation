@@ -127,4 +127,20 @@ describe("Linked List class", () => {
       expect(testLinked.indexOf(109)).toBe(-1);
     });
   });
+
+  describe("isEmpty method", () => {
+    test("should have an isEmpty method", () => {
+      expect(testLinked.isEmpty).not.toBeUndefined();
+    });
+
+    test("should true if the linked list is empty", () => {
+      testLinked = new LinkedListClass();
+      expect(testLinked.isEmpty()).toBeTruthy();
+    });
+
+    test("should return false if the linked list is not empty", () => {
+      testLinked.add(10);
+      expect(testLinked.isEmpty()).toBeFalsy();
+    });
+  });
 });
