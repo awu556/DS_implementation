@@ -143,4 +143,25 @@ describe("Linked List class", () => {
       expect(testLinked.isEmpty()).toBeFalsy();
     });
   });
+
+  describe("size_of_list method", () => {
+    test("should have an size_of_list method", () => {
+      expect(testLinked.size_of_list).not.toBeUndefined();
+    });
+
+    test("should return the size of the linked list", () => {
+      testLinked = addNodes([40, 28, 89, 16]);
+      expect(testLinked.size_of_list()).toBe(4);
+    });
+  });
+
+  describe("printList method", () => {
+    test("should have an printList method", () => {
+      expect(testLinked.printList).not.toBeUndefined();
+    });
+
+    test("should print the contents of the linked list in a string", () => {
+      expect(testLinked.printList()).toBe("40 28 89 16");
+    });
+  });
 });

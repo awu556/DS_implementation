@@ -116,6 +116,21 @@ class LinkedListClass {
   isEmpty() {
     return this.size === 0;
   }
+
+  size_of_list() {
+    return this.size;
+  }
+
+  printList() {
+    let curr = this.head;
+    let str = "";
+
+    while (curr) {
+      str += curr.val + " ";
+      curr = curr.next;
+    }
+    return str.trim();
+  }
 }
 
 module.exports = { Node, LinkedListClass };
