@@ -4,7 +4,7 @@
   "description": "",
   "main": "array.js",
   "scripts": {
-    "test": "jest linkedList.test.js"
+    "test": "jest BinarySearchTree.test.js"
   },
   "keywords": [],
   "author": "",
