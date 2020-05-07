@@ -11,29 +11,29 @@ class BinarySearchTree {
     this.root = null;
   }
 
-  insert(data){
-    let newNode = new Node(data)
+  insert(data) {
+    let newNode = new Node(data);
 
-    if(this.root === null){
-      this.root = newNode
-    } else {
-      this.insertNode(this.root, newNode);
-    }
-
-    insertNode(node, newNode){
-      if(newNode.data < node.data){
-        if(node.left === null){
+    function insertNode(node, newNode) {
+      if (newNode.data < node.data) {
+        if (node.left === null) {
           node.left = newNode;
         } else {
-          this.insertNode(node.left, newNode);
+          insertNode(node.left, newNode);
         }
       } else {
-        if(node.right === null){
+        if (node.right === null) {
           node.right = newNode;
         } else {
-          this.insertNode(node.right, newNode)
+          insertNode(node.right, newNode);
         }
       }
+    }
+
+    if (this.root === null) {
+      this.root = newNode;
+    } else {
+      insertNode(this.root, newNode);
     }
   }
 }
