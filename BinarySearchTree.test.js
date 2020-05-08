@@ -41,4 +41,10 @@ describe("Binary Search Tree class", () => {
       expect(test.root.right.right.data).toBe(46);
     });
   });
+
+  describe("remove method", () => {
+    test("should possess a remove method", () => {
+      expect(testBST.remove).not.toBeUndefined();
+    });
+  });
 });
