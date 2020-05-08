@@ -34,5 +34,11 @@ describe("Binary Search Tree class", () => {
       let test = bulkInsert([20, 16, 31, 8]);
       expect(test.root.right.data).toBe(31);
     });
+
+    test("every subsequent value added is placed correctly based on the values before it", () => {
+      let test = bulkInsert([14, 8, 3, 22, 46]);
+      expect(test.root.left.left.data).toBe(3);
+      expect(test.root.right.right.data).toBe(46);
+    });
   });
 });

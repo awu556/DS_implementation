@@ -36,6 +36,30 @@ class BinarySearchTree {
       insertNode(this.root, newNode);
     }
   }
+
+  remove(data) {
+    this.root = removeNode(this.root, data);
+
+    function removeNode(node, key) {
+      if (node === null) {
+        return null;
+      } else if (key < node.data) {
+        node.left = removeNode(node.left, key);
+        return node;
+      } else if (key > node.data) {
+        node.right = removeNode(node.right, key);
+      } else {
+        if (node.left === null && node.right === null) {
+          node = null;
+          return node;
+        }
+        if (node.left === null) {
+          node = node.right;
+          return node;
+        }
+      }
+    }
+  }
 }
 
 module.exports = { Node, BinarySearchTree };
