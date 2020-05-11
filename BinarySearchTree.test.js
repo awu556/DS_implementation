@@ -46,5 +46,17 @@ describe("Binary Search Tree class", () => {
     test("should possess a remove method", () => {
       expect(testBST.remove).not.toBeUndefined();
     });
+
+    test("removes a value that was added to the BST", () => {
+      let test = bulkInsert([21, 31, 14, 8]);
+      test.remove(8);
+      expect(test.root.left.left).toBe(null);
+    });
+
+    test("accounts for removing a node that has children", () => {
+      let test = bulkInsert([21, 31, 14, 8]);
+      test.remove(14);
+      expect(test.root.left.data).toBe(8);
+    });
   });
 });
