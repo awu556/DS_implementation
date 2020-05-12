@@ -53,10 +53,22 @@ describe("Binary Search Tree class", () => {
       expect(test.root.left.left).toBe(null);
     });
 
-    test("accounts for removing a node that has children", () => {
+    test("accounts for removing a node that has children on the left", () => {
       let test = bulkInsert([21, 31, 14, 8]);
       test.remove(14);
       expect(test.root.left.data).toBe(8);
+    });
+
+    test("accounts for removing a node that has children on the right", () => {
+      let test = bulkInsert([21, 31, 25, 8]);
+      test.remove(31);
+      expect(test.root.right.data).toBe(25);
+    });
+
+    test("accounts for removing the root node", () => {
+      let test = bulkInsert([21, 31, 25, 8]);
+      test.remove(21);
+      expect(test.root).toBeUndefined();
     });
   });
 });

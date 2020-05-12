@@ -48,12 +48,12 @@ class BinarySearchTree {
         return node;
       } else if (key > node.data) {
         node.right = removeNode(node.right, key);
+        return node;
       } else {
         if (node.left === null && node.right === null) {
           node = null;
           return node;
-        }
-        if (node.left === null) {
+        } else if (node.left === null) {
           node = node.right;
           return node;
         } else if (node.right === null) {
