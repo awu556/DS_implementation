@@ -63,6 +63,19 @@ class BinarySearchTree {
       }
     }
   }
+
+  // Tree Traversal
+
+  inorder() {
+    inOrderHelper(this.root);
+    function inOrderHelper(node) {
+      if (node !== null) {
+        inOrderHelper(node.left);
+        console.log(node.data);
+        inOrderHelper(node.right);
+      }
+    }
+  }
 }
 
 module.exports = { Node, BinarySearchTree };

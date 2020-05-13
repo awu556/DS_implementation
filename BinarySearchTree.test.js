@@ -71,4 +71,15 @@ describe("Binary Search Tree class", () => {
       expect(test.root).toBeUndefined();
     });
   });
+
+  describe("inorder method", () => {
+    test("should possess a inorder method", () => {
+      expect(testBST.inorder).not.toBeUndefined();
+    });
+
+    test("should print out all the values in an inorder traversal", () => {
+      let test = bulkInsert([32, 22, 25, 43, 76]);
+      expect(test.inorder(32));
+    });
+  });
 });
