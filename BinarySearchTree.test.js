@@ -82,4 +82,15 @@ describe("Binary Search Tree class", () => {
       expect(test.inorder(32));
     });
   });
+
+  describe("preorder method", () => {
+    test("should possess a preorder method", () => {
+      expect(testBST.preorder).not.toBeUndefined();
+    });
+
+    test("should print out all the values in an preorder traversal", () => {
+      let test = bulkInsert([32, 22, 25, 43, 76]);
+      expect(test.preorder(32));
+    });
+  });
 });

@@ -76,6 +76,15 @@ class BinarySearchTree {
       }
     }
   }
+
+  preorder(node) {
+    preOrderHelper(this.root);
+    function preOrderHelper(node) {
+      console.log(node.data);
+      preOrderHelper(node.left);
+      preOrderHelper(node.right);
+    }
+  }
 }
 
 module.exports = { Node, BinarySearchTree };
