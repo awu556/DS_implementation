@@ -77,12 +77,25 @@ class BinarySearchTree {
     }
   }
 
-  preorder(node) {
+  preorder() {
     preOrderHelper(this.root);
     function preOrderHelper(node) {
-      console.log(node.data);
-      preOrderHelper(node.left);
-      preOrderHelper(node.right);
+      if (node !== null) {
+        console.log(node.data);
+        preOrderHelper(node.left);
+        preOrderHelper(node.right);
+      }
+    }
+  }
+
+  postorder() {
+    postOrderHelper(this.root);
+    function postOrderHelper(node) {
+      if (node !== null) {
+        postOrderHelper(node.left);
+        postOrderHelper(node.right);
+        console.log(node.data);
+      }
     }
   }
 }
