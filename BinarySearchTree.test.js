@@ -77,10 +77,10 @@ describe("Binary Search Tree class", () => {
       expect(testBST.inorder).not.toBeUndefined();
     });
 
-    test("should print out all the values in an inorder traversal", () => {
-      let test = bulkInsert([32, 22, 25, 43, 76]);
-      expect(test.inorder(32));
-    });
+    // test("should print out all the values in an inorder traversal", () => {
+    //   let test = bulkInsert([32, 22, 25, 43, 76]);
+    //   expect(test.inorder(32));
+    // });
   });
 
   describe("preorder method", () => {
@@ -88,10 +88,10 @@ describe("Binary Search Tree class", () => {
       expect(testBST.preorder).not.toBeUndefined();
     });
 
-    test("should print out all the values in an preorder traversal", () => {
-      let test = bulkInsert([32, 22, 25, 43, 76]);
-      expect(test.preorder(32));
-    });
+    // test("should print out all the values in an preorder traversal", () => {
+    //   let test = bulkInsert([32, 22, 25, 43, 76]);
+    //   expect(test.preorder(32));
+    // });
   });
 
   describe("postorder method", () => {
@@ -99,9 +99,20 @@ describe("Binary Search Tree class", () => {
       expect(testBST.postorder).not.toBeUndefined();
     });
 
-    test("should print out all the values in an postorder traversal", () => {
+    // test("should print out all the values in an postorder traversal", () => {
+    //   let test = bulkInsert([32, 22, 25, 43, 76]);
+    //   expect(test.postorder(32));
+    // });
+  });
+
+  describe("findMinNode method", () => {
+    test("should possess a findMinNode method", () => {
+      expect(testBST.findMinNode).not.toBeUndefined();
+    });
+
+    test("should print out all the values in an findMinNode traversal", () => {
       let test = bulkInsert([32, 22, 25, 43, 76]);
-      expect(test.postorder(32));
+      expect(console.log(test.findMinNode()));
     });
   });
 });

@@ -98,6 +98,18 @@ class BinarySearchTree {
       }
     }
   }
+
+  // Helper Methods
+
+  findMinNode(node) {
+    if (!node) {
+      return 0;
+    }
+    if (node.left) {
+      return this.findMinNode(node.left);
+    }
+    return node.data;
+  }
 }
 
 module.exports = { Node, BinarySearchTree };
