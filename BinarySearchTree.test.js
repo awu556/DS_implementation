@@ -111,8 +111,20 @@ describe("Binary Search Tree class", () => {
     });
 
     test("should print out all the values in an findMinNode traversal", () => {
-      let test = bulkInsert([32, 22, 25, 43, 76]);
-      expect(console.log(test.findMinNode()));
+      let test = bulkInsert([32, 22, 18, 25, 43, 76]);
+      expect(test.findMinNode()).toBe(18);
+    });
+
+    test("should print out all the values in an findMinNode traversal", () => {
+      let test = bulkInsert([32, 22, 18, 25, 43, 76]);
+      test.insert(11);
+      expect(test.findMinNode()).toBe(11);
+    });
+  });
+
+  describe("getRootNode method", () => {
+    test("should possess a getRootNode method", () => {
+      expect(testBST.getRootNode).not.toBeUndefined();
     });
   });
 });

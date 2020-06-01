@@ -101,14 +101,20 @@ class BinarySearchTree {
 
   // Helper Methods
 
-  findMinNode(node) {
-    if (!node) {
-      return 0;
+  findMinNode() {
+    if (this.root === null) {
+      throw "Empty tree!";
     }
-    if (node.left) {
-      return this.findMinNode(node.left);
+    let currNode = this.root;
+
+    while (currNode.left !== null) {
+      currNode = currNode.left;
     }
-    return node.data;
+    return currNode.data;
+  }
+
+  getRootNode() {
+    return this.root;
   }
 }
 
