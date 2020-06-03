@@ -137,5 +137,20 @@ describe("Binary Search Tree class", () => {
     test("should possess a search method", () => {
       expect(testBST.search).not.toBeUndefined();
     });
+
+    test("should return the searched node from the root", () => {
+      let test = bulkInsert([33, 16, 45, 41, 23, 19]);
+      expect(test.search(test.root, 16).right.data).toBe(23);
+    });
+
+    test("can find a node even if not starting from the root", () => {
+      let test = bulkInsert([33, 16, 45, 41, 23, 19]);
+      expect(test.search(test.root.left, 19).data).toBe(19);
+    });
+
+    test("should return null if the searched node cannot be found from the starting node", () => {
+      let test = bulkInsert([33, 16, 45, 41, 23, 19]);
+      expect(test.search(test.root.right, 16)).toBe(null);
+    });
   });
 });
